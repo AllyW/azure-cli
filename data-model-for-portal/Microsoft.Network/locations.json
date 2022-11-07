@@ -75,6 +75,38 @@
             ]
         },
         {
+            "name": "az network list-usages",
+            "description": "List the number of network resources in a region that are used against a subscription quota.",
+            "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/usages",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network#az-network-list-usages"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--location]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "List the number of network resources in a region that are used against a subscription quota.",
+                    "parameters": [
+                        {
+                            "name": "--location",
+                            "value": "[path.location]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "az network service-endpoint list",
             "description": "List what values of endpoint services are available for use.",
             "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/virtualNetworkAvailableEndpointServices",

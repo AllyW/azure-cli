@@ -1,0 +1,190 @@
+{
+    "resourceType": "loadBalancers",
+    "apiVersion": "2022-05-01",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/cli/azure/network/lb"
+    },
+    "commands": [
+        {
+            "name": "az network lb delete",
+            "description": "Delete the specified load balancer.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/loadBalancers/{loadBalancerName}",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/lb#az-network-lb-delete"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--resource-group]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Delete a load balancer.",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--name",
+                            "value": "[path.loadBalancerName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network lb list",
+            "description": "List load balancers.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/loadBalancers",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/lb#az-network-lb-list"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--resource-group]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "List load balancers.",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network lb list-nic",
+            "description": "List associated load balancer network interfaces.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/loadBalancers/{loadBalancerName}/networkInterfaces",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/lb#az-network-lb-list-nic"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--resource-group]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "List associated load balancer network interfaces.",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--name",
+                            "value": "[path.loadBalancerName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network lb show",
+            "description": "Get the details of a load balancer.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/loadBalancers/{loadBalancerName}",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/lb#az-network-lb-show"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--resource-group]",
+                        "[--subscription]",
+                        "[--expand]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Get the details of a load balancer.",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--name",
+                            "value": "[path.loadBalancerName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network lb probe list",
+            "description": "List probes.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/loadBalancers/{loadBalancerName}/probes",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/lb/probe#az-network-lb-probe-list"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--lb-name]",
+                        "[--resource-group]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "List probes.",
+                    "parameters": [
+                        {
+                            "name": "--lb-name",
+                            "value": "[path.loadBalancerName]"
+                        },
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

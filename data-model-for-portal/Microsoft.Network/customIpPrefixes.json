@@ -1,0 +1,116 @@
+{
+    "resourceType": "customIpPrefixes",
+    "apiVersion": "2022-05-01",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/cli/azure/network/custom-ip/prefix"
+    },
+    "commands": [
+        {
+            "name": "az network custom-ip prefix delete",
+            "description": "Delete a custom IP prefix resource.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/customIpPrefixes/{customIpPrefixName}",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/custom-ip/prefix#az-network-custom-ip-prefix-delete"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--resource-group]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Delete a custom IP prefix resource.",
+                    "parameters": [
+                        {
+                            "name": "--name",
+                            "value": "[path.customIpPrefixName]"
+                        },
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network custom-ip prefix list",
+            "description": "List custom IP prefix resources.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/customIpPrefixes",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/custom-ip/prefix#az-network-custom-ip-prefix-list"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--resource-group]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "List custom IP prefix resources.",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network custom-ip prefix show",
+            "description": "Get the details of a custom IP prefix resource.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/customIpPrefixes/{customIpPrefixName}",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/custom-ip/prefix#az-network-custom-ip-prefix-show"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--resource-group]",
+                        "[--subscription]",
+                        "[--expand]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Get the details of a custom IP prefix resource.",
+                    "parameters": [
+                        {
+                            "name": "--name",
+                            "value": "[path.customIpPrefixName]"
+                        },
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

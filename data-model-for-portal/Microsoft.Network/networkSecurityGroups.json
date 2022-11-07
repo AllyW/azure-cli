@@ -1,0 +1,153 @@
+{
+    "resourceType": "networkSecurityGroups",
+    "apiVersion": "2022-01-01",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/cli/azure/network/nsg"
+    },
+    "commands": [
+        {
+            "name": "az network nsg delete",
+            "description": "Delete a network security group.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityGroups/{networkSecurityGroupName}",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/nsg#az-network-nsg-delete"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--resource-group]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Delete an NSG in a resource group.",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--name",
+                            "value": "[path.networkSecurityGroupName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network nsg list",
+            "description": "List network security groups.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityGroups",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/nsg#az-network-nsg-list"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--resource-group]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "List network security groups.",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network nsg show",
+            "description": "Get information about a network security group.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityGroups/{networkSecurityGroupName}",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/nsg#az-network-nsg-show"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--resource-group]",
+                        "[--subscription]",
+                        "[--expand]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Get basic information about an NSG.",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--name",
+                            "value": "[path.networkSecurityGroupName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network nsg rule list",
+            "description": "List all rules in a network security group.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityGroups/{networkSecurityGroupName}/securityRules",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/nsg/rule#az-network-nsg-rule-list"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--resource-group]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "List all rules in a network security group.",
+                    "parameters": [
+                        {
+                            "name": "--name",
+                            "value": "[path.networkSecurityGroupName]"
+                        },
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -141,6 +141,10 @@
                     "description": "Get a list of workspaces under a resource group or a subscription.",
                     "parameters": [
                         {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
                             "name": "--subscription",
                             "value": "[path.subscriptionId]"
                         }
@@ -284,7 +288,7 @@
                     "description": "List all data export ruleses for a given workspace.",
                     "parameters": [
                         {
-                            "name": "-g",
+                            "name": "--resource-group",
                             "value": "[path.resourceGroupName]"
                         },
                         {
@@ -432,7 +436,7 @@
                     "description": "List all saved searches for a given workspace.",
                     "parameters": [
                         {
-                            "name": "-g",
+                            "name": "--resource-group",
                             "value": "[path.resourceGroupName]"
                         },
                         {

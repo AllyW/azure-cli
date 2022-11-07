@@ -27,11 +27,11 @@
                     "description": "Delete an Azure network virtual appliance.",
                     "parameters": [
                         {
-                            "name": "-n",
+                            "name": "--name",
                             "value": "[path.networkVirtualApplianceName]"
                         },
                         {
-                            "name": "-g",
+                            "name": "--resource-group",
                             "value": "[path.resourceGroupName]"
                         },
                         {

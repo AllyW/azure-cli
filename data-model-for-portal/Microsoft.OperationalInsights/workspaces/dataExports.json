@@ -29,11 +29,11 @@
                     "description": "Delete a data export rule for a given workspace.",
                     "parameters": [
                         {
-                            "name": "-n",
+                            "name": "--name",
                             "value": "[path.dataExportName]"
                         },
                         {
-                            "name": "-g",
+                            "name": "--resource-group",
                             "value": "[path.resourceGroupName]"
                         },
                         {
@@ -72,11 +72,11 @@
                     "description": "Show a data export rule for a given workspace.",
                     "parameters": [
                         {
-                            "name": "-n",
+                            "name": "--name",
                             "value": "[path.dataExportName]"
                         },
                         {
-                            "name": "-g",
+                            "name": "--resource-group",
                             "value": "[path.resourceGroupName]"
                         },
                         {

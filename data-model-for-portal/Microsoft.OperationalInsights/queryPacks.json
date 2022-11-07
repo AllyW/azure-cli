@@ -28,11 +28,11 @@
                     "description": "Delete a log analytics query pack.",
                     "parameters": [
                         {
-                            "name": "-n",
+                            "name": "--name",
                             "value": "[path.queryPackName]"
                         },
                         {
-                            "name": "-g",
+                            "name": "--resource-group",
                             "value": "[path.resourceGroupName]"
                         },
                         {
@@ -61,8 +61,12 @@
             },
             "examples": [
                 {
-                    "description": "List query packs in a specific subscription",
+                    "description": "List query packs in a specific resource group",
                     "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
                         {
                             "name": "--subscription",
                             "value": "[path.subscriptionId]"

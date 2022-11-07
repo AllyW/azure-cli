@@ -29,11 +29,11 @@
                     "description": "Delete a saved search for a given workspace.",
                     "parameters": [
                         {
-                            "name": "-g",
+                            "name": "--resource-group",
                             "value": "[path.resourceGroupName]"
                         },
                         {
-                            "name": "-n",
+                            "name": "--name",
                             "value": "[path.savedSearchId]"
                         },
                         {
@@ -72,11 +72,11 @@
                     "description": "Show a saved search for a given workspace.",
                     "parameters": [
                         {
-                            "name": "-g",
+                            "name": "--resource-group",
                             "value": "[path.resourceGroupName]"
                         },
                         {
-                            "name": "-n",
+                            "name": "--name",
                             "value": "[path.savedSearchId]"
                         },
                         {

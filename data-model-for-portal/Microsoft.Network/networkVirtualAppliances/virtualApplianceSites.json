@@ -32,11 +32,11 @@
                             "value": "[path.networkVirtualApplianceName]"
                         },
                         {
-                            "name": "-g",
+                            "name": "--resource-group",
                             "value": "[path.resourceGroupName]"
                         },
                         {
-                            "name": "-n",
+                            "name": "--name",
                             "value": "[path.siteName]"
                         },
                         {

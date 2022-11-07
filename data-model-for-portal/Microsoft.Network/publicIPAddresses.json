@@ -60,8 +60,12 @@
             },
             "examples": [
                 {
-                    "description": "List all public IPs in a subscription.",
+                    "description": "List all public IPs in a resource group.",
                     "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
                         {
                             "name": "--subscription",
                             "value": "[path.subscriptionId]"

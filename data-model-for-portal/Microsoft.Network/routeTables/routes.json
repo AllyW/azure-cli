@@ -70,11 +70,11 @@
                     "description": "Get the details of a route in a route table.",
                     "parameters": [
                         {
-                            "name": "-g",
+                            "name": "--resource-group",
                             "value": "[path.resourceGroupName]"
                         },
                         {
-                            "name": "-n",
+                            "name": "--name",
                             "value": "[path.routeName]"
                         },
                         {

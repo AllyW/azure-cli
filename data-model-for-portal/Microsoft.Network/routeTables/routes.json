@@ -1,0 +1,93 @@
+{
+    "resourceType": "routeTables/routes",
+    "apiVersion": "2021-08-01",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/cli/azure/network/route-table/route"
+    },
+    "commands": [
+        {
+            "name": "az network route-table route delete",
+            "description": "Delete a route from a route table.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/routeTables/{routeTableName}/routes/{routeName}",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/route-table/route#az-network-route-table-route-delete"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--resource-group]",
+                        "[--name]",
+                        "[--route-table-name]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Delete a route from a route table.",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--route-table-name",
+                            "value": "[path.routeTableName]"
+                        },
+                        {
+                            "name": "--name",
+                            "value": "[path.routeName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network route-table route show",
+            "description": "Get the details of a route in a route table.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/routeTables/{routeTableName}/routes/{routeName}",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/route-table/route#az-network-route-table-route-show"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--resource-group]",
+                        "[--name]",
+                        "[--route-table-name]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Get the details of a route in a route table.",
+                    "parameters": [
+                        {
+                            "name": "-g",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "-n",
+                            "value": "[path.routeName]"
+                        },
+                        {
+                            "name": "--route-table-name",
+                            "value": "[path.routeTableName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

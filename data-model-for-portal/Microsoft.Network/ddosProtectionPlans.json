@@ -1,0 +1,111 @@
+{
+    "resourceType": "ddosProtectionPlans",
+    "apiVersion": "2022-05-01",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/cli/azure/network/ddos-protection"
+    },
+    "commands": [
+        {
+            "name": "az network ddos-protection delete",
+            "description": "Delete a DDoS protection plan.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/ddosProtectionPlans/{ddosProtectionPlanName}",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/ddos-protection#az-network-ddos-protection-delete"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--resource-group]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Delete a DDoS protection plan.",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--name",
+                            "value": "[path.ddosProtectionPlanName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network ddos-protection list",
+            "description": "List DDoS protection plans.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/ddosProtectionPlans",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/ddos-protection#az-network-ddos-protection-list"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--resource-group]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "List DDoS protection plans",
+                    "parameters": [
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network ddos-protection show",
+            "description": "Show details of a DDoS protection plan.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/ddosProtectionPlans/{ddosProtectionPlanName}",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/ddos-protection#az-network-ddos-protection-show"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--resource-group]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Show details of a DDoS protection plan.",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--name",
+                            "value": "[path.ddosProtectionPlanName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

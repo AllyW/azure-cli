@@ -1,0 +1,93 @@
+{
+    "resourceType": "serviceEndpointPolicies/serviceEndpointPolicyDefinitions",
+    "apiVersion": "2021-08-01",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/cli/azure/network/service-endpoint/policy-definition"
+    },
+    "commands": [
+        {
+            "name": "az network service-endpoint policy-definition delete",
+            "description": "Delete a service endpoint policy definition.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/serviceEndpointPolicies/{serviceEndpointPolicyName}/serviceEndpointPolicyDefinitions/{serviceEndpointPolicyDefinitionName}",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/service-endpoint/policy-definition#az-network-service-endpoint-policy-definition-delete"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--resource-group]",
+                        "[--name]",
+                        "[--policy-name]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Delete a service endpoint policy definition.",
+                    "parameters": [
+                        {
+                            "name": "--name",
+                            "value": "[path.serviceEndpointPolicyDefinitionName]"
+                        },
+                        {
+                            "name": "--policy-name",
+                            "value": "[path.serviceEndpointPolicyName]"
+                        },
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network service-endpoint policy-definition show",
+            "description": "Get the details of a service endpoint policy definition.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/serviceEndpointPolicies/{serviceEndpointPolicyName}/serviceEndpointPolicyDefinitions/{serviceEndpointPolicyDefinitionName}",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/service-endpoint/policy-definition#az-network-service-endpoint-policy-definition-show"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--resource-group]",
+                        "[--name]",
+                        "[--policy-name]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Get the details of a service endpoint policy definition.",
+                    "parameters": [
+                        {
+                            "name": "--name",
+                            "value": "[path.serviceEndpointPolicyDefinitionName]"
+                        },
+                        {
+                            "name": "--policy-name",
+                            "value": "[path.serviceEndpointPolicyName]"
+                        },
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

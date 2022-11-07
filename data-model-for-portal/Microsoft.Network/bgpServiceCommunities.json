@@ -1,0 +1,36 @@
+{
+    "resourceType": "bgpServiceCommunities",
+    "apiVersion": "2021-08-01",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/cli/azure/network/route-filter/rule"
+    },
+    "commands": [
+        {
+            "name": "az network route-filter rule list-service-communities",
+            "description": "Gets all the available BGP service communities.",
+            "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Network/bgpServiceCommunities",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/route-filter/rule#az-network-route-filter-rule-list-service-communities"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Gets all the available BGP service communities.",
+                    "parameters": [
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

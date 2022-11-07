@@ -1,0 +1,177 @@
+{
+    "resourceType": "virtualHubs/bgpConnections",
+    "apiVersion": "2022-01-01",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/cli/azure/network/routeserver/peering"
+    },
+    "commands": [
+        {
+            "name": "az network routeserver peering delete",
+            "description": "Delete a route server peering.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/bgpConnections/{connectionName}",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/routeserver/peering#az-network-routeserver-peering-delete"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--resource-group]",
+                        "[--subscription]",
+                        "[--routeserver]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Delete a route server peering.",
+                    "parameters": [
+                        {
+                            "name": "-n",
+                            "value": "[path.connectionName]"
+                        },
+                        {
+                            "name": "-g",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        },
+                        {
+                            "name": "--routeserver",
+                            "value": "[path.virtualHubName]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network routeserver peering list-advertised-routes",
+            "description": "List all routes the route server bgp connection is advertising to the specified peer.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{hubName}/bgpConnections/{connectionName}/advertisedRoutes",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/routeserver/peering#az-network-routeserver-peering-list-advertised-routes"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--routeserver]",
+                        "[--resource-group]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "List.",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--routeserver",
+                            "value": "[path.hubName]"
+                        },
+                        {
+                            "name": "--name",
+                            "value": "[path.connectionName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network routeserver peering list-learned-routes",
+            "description": "List all routes the route server bgp connection has learned.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{hubName}/bgpConnections/{connectionName}/learnedRoutes",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/routeserver/peering#az-network-routeserver-peering-list-learned-routes"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--routeserver]",
+                        "[--resource-group]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "List.",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--routeserver",
+                            "value": "[path.hubName]"
+                        },
+                        {
+                            "name": "--name",
+                            "value": "[path.connectionName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network routeserver peering show",
+            "description": "Show a route server peering.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/bgpConnections/{connectionName}",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/routeserver/peering#az-network-routeserver-peering-show"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--resource-group]",
+                        "[--subscription]",
+                        "[--routeserver]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Show a route server peering.",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--routeserver",
+                            "value": "[path.virtualHubName]"
+                        },
+                        {
+                            "name": "--name",
+                            "value": "[path.connectionName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

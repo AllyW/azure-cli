@@ -1,0 +1,93 @@
+{
+    "resourceType": "networkVirtualAppliances/virtualApplianceSites",
+    "apiVersion": "2021-08-01",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/cli/azure/network/virtual-appliance/site"
+    },
+    "commands": [
+        {
+            "name": "az network virtual-appliance site delete",
+            "description": "Delete an Azure network virtual appliance site.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/virtualApplianceSites/{siteName}",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/virtual-appliance/site#az-network-virtual-appliance-site-delete"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--appliance-name]",
+                        "[--resource-group]",
+                        "[--name]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Delete an Azure network virtual appliance site.",
+                    "parameters": [
+                        {
+                            "name": "--appliance-name",
+                            "value": "[path.networkVirtualApplianceName]"
+                        },
+                        {
+                            "name": "-g",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "-n",
+                            "value": "[path.siteName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network virtual-appliance site show",
+            "description": "Show the detail of an Azure network virtual appliance site.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/virtualApplianceSites/{siteName}",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/virtual-appliance/site#az-network-virtual-appliance-site-show"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--appliance-name]",
+                        "[--resource-group]",
+                        "[--name]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Show the detail of an Azure network virtual appliance site.",
+                    "parameters": [
+                        {
+                            "name": "--name",
+                            "value": "[path.siteName]"
+                        },
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--appliance-name",
+                            "value": "[path.networkVirtualApplianceName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,93 @@
+{
+    "resourceType": "virtualNetworks/virtualNetworkPeerings",
+    "apiVersion": "2022-01-01",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/cli/azure/network/vnet/peering"
+    },
+    "commands": [
+        {
+            "name": "az network vnet peering delete",
+            "description": "Delete a peering.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/virtualNetworkPeerings/{virtualNetworkPeeringName}",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/vnet/peering#az-network-vnet-peering-delete"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--resource-group]",
+                        "[--subscription]",
+                        "[--vnet-name]",
+                        "[--name]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Delete a virtual network peering connection.",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--name",
+                            "value": "[path.virtualNetworkPeeringName]"
+                        },
+                        {
+                            "name": "--vnet-name",
+                            "value": "[path.virtualNetworkName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network vnet peering show",
+            "description": "Show details of a peering.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/virtualNetworkPeerings/{virtualNetworkPeeringName}",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/vnet/peering#az-network-vnet-peering-show"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--resource-group]",
+                        "[--subscription]",
+                        "[--vnet-name]",
+                        "[--name]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Show all details of the specified virtual network peering.",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--name",
+                            "value": "[path.virtualNetworkPeeringName]"
+                        },
+                        {
+                            "name": "--vnet-name",
+                            "value": "[path.virtualNetworkName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

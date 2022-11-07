@@ -1,0 +1,95 @@
+{
+    "resourceType": "workspaces/savedSearches",
+    "apiVersion": "2020-08-01",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/saved-search"
+    },
+    "commands": [
+        {
+            "name": "az monitor log-analytics workspace saved-search delete",
+            "description": "Delete a saved search for a given workspace.",
+            "path": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/savedSearches/{savedSearchId}",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/saved-search#az-monitor-log-analytics-workspace-saved-search-delete"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--resource-group]",
+                        "[--name]",
+                        "[--saved-search-name]",
+                        "[--subscription]",
+                        "[--workspace-name]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Delete a saved search for a given workspace.",
+                    "parameters": [
+                        {
+                            "name": "-g",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "-n",
+                            "value": "[path.savedSearchId]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        },
+                        {
+                            "name": "--workspace-name",
+                            "value": "[path.workspaceName]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az monitor log-analytics workspace saved-search show",
+            "description": "Show a saved search for a given workspace.",
+            "path": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/savedSearches/{savedSearchId}",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/saved-search#az-monitor-log-analytics-workspace-saved-search-show"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--resource-group]",
+                        "[--name]",
+                        "[--saved-search-name]",
+                        "[--subscription]",
+                        "[--workspace-name]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Show a saved search for a given workspace.",
+                    "parameters": [
+                        {
+                            "name": "-g",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "-n",
+                            "value": "[path.savedSearchId]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        },
+                        {
+                            "name": "--workspace-name",
+                            "value": "[path.workspaceName]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

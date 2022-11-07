@@ -1,0 +1,68 @@
+{
+    "resourceType": "networkVirtualApplianceSkus",
+    "apiVersion": "2021-08-01",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/cli/azure/network/virtual-appliance/sku"
+    },
+    "commands": [
+        {
+            "name": "az network virtual-appliance sku list",
+            "description": "List all Azure network virtual appliance sku.",
+            "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Network/networkVirtualApplianceSkus",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/virtual-appliance/sku#az-network-virtual-appliance-sku-list"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "List all Azure network virtual appliance sku.",
+                    "parameters": [
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az network virtual-appliance sku show",
+            "description": "Show the detail of an Azure network virtual appliance sku.",
+            "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Network/networkVirtualApplianceSkus/{skuName}",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/network/virtual-appliance/sku#az-network-virtual-appliance-sku-show"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Show the detail of an Azure network virtual appliance sku.",
+                    "parameters": [
+                        {
+                            "name": "--name",
+                            "value": "[path.skuName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

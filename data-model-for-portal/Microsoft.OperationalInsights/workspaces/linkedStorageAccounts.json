@@ -1,0 +1,95 @@
+{
+    "resourceType": "workspaces/linkedStorageAccounts",
+    "apiVersion": "2020-08-01",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/linked-storage"
+    },
+    "commands": [
+        {
+            "name": "az monitor log-analytics workspace linked-storage delete",
+            "description": "Delete all linked storage accounts with specific data source type for log analytics workspace.",
+            "path": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/linkedStorageAccounts/{dataSourceType}",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/linked-storage#az-monitor-log-analytics-workspace-linked-storage-delete"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--type]",
+                        "[--data-source-type]",
+                        "[--resource-group]",
+                        "[--subscription]",
+                        "[--workspace-name]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Delete all linked storage accounts with a specific type for a log analytics workspace",
+                    "parameters": [
+                        {
+                            "name": "--type",
+                            "value": "[path.dataSourceType]"
+                        },
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--workspace-name",
+                            "value": "[path.workspaceName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az monitor log-analytics workspace linked-storage show",
+            "description": "Show all linked storage accounts with specific data source type for a log analytics workspace.",
+            "path": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/linkedStorageAccounts/{dataSourceType}",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/linked-storage#az-monitor-log-analytics-workspace-linked-storage-show"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--type]",
+                        "[--data-source-type]",
+                        "[--resource-group]",
+                        "[--subscription]",
+                        "[--workspace-name]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Show all linked storage accounts with a specific type for a log analytics workspace",
+                    "parameters": [
+                        {
+                            "name": "--type",
+                            "value": "[path.dataSourceType]"
+                        },
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--workspace-name",
+                            "value": "[path.workspaceName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

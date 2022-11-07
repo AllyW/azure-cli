@@ -1,0 +1,95 @@
+{
+    "resourceType": "workspaces/linkedServices",
+    "apiVersion": "2020-08-01",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/linked-service"
+    },
+    "commands": [
+        {
+            "name": "az monitor log-analytics workspace linked-service delete",
+            "description": "Delete a linked service.",
+            "path": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/linkedServices/{linkedServiceName}",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/linked-service#az-monitor-log-analytics-workspace-linked-service-delete"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--linked-service-name]",
+                        "[--resource-group]",
+                        "[--subscription]",
+                        "[--workspace-name]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Delete a linked service.",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--name",
+                            "value": "[path.linkedServiceName]"
+                        },
+                        {
+                            "name": "--workspace-name",
+                            "value": "[path.workspaceName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az monitor log-analytics workspace linked-service show",
+            "description": "Show the properties of a linked service.",
+            "path": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/linkedServices/{linkedServiceName}",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/linked-service#az-monitor-log-analytics-workspace-linked-service-show"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--linked-service-name]",
+                        "[--resource-group]",
+                        "[--subscription]",
+                        "[--workspace-name]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Show the properties of a linked service.",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--name",
+                            "value": "[path.linkedServiceName]"
+                        },
+                        {
+                            "name": "--workspace-name",
+                            "value": "[path.workspaceName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

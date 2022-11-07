@@ -1,0 +1,95 @@
+{
+    "resourceType": "workspaces/intelligencePacks",
+    "apiVersion": "2020-08-01",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/pack"
+    },
+    "commands": [
+        {
+            "name": "az monitor log-analytics workspace pack disable",
+            "description": "Disable an intelligence pack for a given workspace.",
+            "path": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/intelligencePacks/{intelligencePackName}/Disable",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/pack#az-monitor-log-analytics-workspace-pack-disable"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--intelligence-pack-name]",
+                        "[--resource-group]",
+                        "[--subscription]",
+                        "[--workspace-name]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Disable an intelligence pack for a given workspace.",
+                    "parameters": [
+                        {
+                            "name": "--name",
+                            "value": "[path.intelligencePackName]"
+                        },
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--workspace-name",
+                            "value": "[path.workspaceName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az monitor log-analytics workspace pack enable",
+            "description": "Enable an intelligence pack for a given workspace.",
+            "path": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/intelligencePacks/{intelligencePackName}/Enable",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/pack#az-monitor-log-analytics-workspace-pack-enable"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--intelligence-pack-name]",
+                        "[--resource-group]",
+                        "[--subscription]",
+                        "[--workspace-name]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Enable an intelligence pack for a given workspace.",
+                    "parameters": [
+                        {
+                            "name": "--name",
+                            "value": "[path.intelligencePackName]"
+                        },
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--workspace-name",
+                            "value": "[path.workspaceName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

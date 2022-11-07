@@ -1,0 +1,137 @@
+{
+    "resourceType": "workspaces/tables",
+    "apiVersion": "2021-12-01-preview",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/table"
+    },
+    "commands": [
+        {
+            "name": "az monitor log-analytics workspace table delete",
+            "description": "Delete a Log Analytics workspace table.",
+            "path": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/tables/{tableName}",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/table#az-monitor-log-analytics-workspace-table-delete"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--resource-group]",
+                        "[--subscription]",
+                        "[--name]",
+                        "[--table-name]",
+                        "[--workspace-name]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Delete a Log Analytics workspace table.",
+                    "parameters": [
+                        {
+                            "name": "-g",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        },
+                        {
+                            "name": "-n",
+                            "value": "[path.tableName]"
+                        },
+                        {
+                            "name": "--workspace-name",
+                            "value": "[path.workspaceName]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az monitor log-analytics workspace table migrate",
+            "description": "Migrate a Log Analytics table from support of the Data Collector API and Custom Fields features to support of Data Collection Rule-based Custom Logs.",
+            "path": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/tables/{tableName}/migrate",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/table#az-monitor-log-analytics-workspace-table-migrate"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--resource-group]",
+                        "[--subscription]",
+                        "[--table-name]",
+                        "[--workspace-name]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Migrate a Log Analytics table from support of the Data Collector API and Custom Fields features to support of Data Collection Rule-based Custom Logs.",
+                    "parameters": [
+                        {
+                            "name": "-g",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        },
+                        {
+                            "name": "--table-name",
+                            "value": "[path.tableName]"
+                        },
+                        {
+                            "name": "--workspace-name",
+                            "value": "[path.workspaceName]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az monitor log-analytics workspace table show",
+            "description": "Get a Log Analytics workspace table.",
+            "path": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/tables/{tableName}",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/table#az-monitor-log-analytics-workspace-table-show"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--resource-group]",
+                        "[--subscription]",
+                        "[--name]",
+                        "[--table-name]",
+                        "[--workspace-name]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Get a Log Analytics workspace table.",
+                    "parameters": [
+                        {
+                            "name": "-g",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        },
+                        {
+                            "name": "-n",
+                            "value": "[path.tableName]"
+                        },
+                        {
+                            "name": "--workspace-name",
+                            "value": "[path.workspaceName]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

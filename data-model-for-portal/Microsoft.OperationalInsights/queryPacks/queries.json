@@ -1,0 +1,95 @@
+{
+    "resourceType": "queryPacks/queries",
+    "apiVersion": "2019-09-01",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/query-pack/query"
+    },
+    "commands": [
+        {
+            "name": "az monitor log-analytics query-pack query delete",
+            "description": "Delete a specific query defined within a log analytics query pack.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/queryPacks/{queryPackName}/queries/{id}",
+            "confirmation": true,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/query-pack/query#az-monitor-log-analytics-query-pack-query-delete"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--query-id]",
+                        "[--query-pack-name]",
+                        "[--resource-group]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Delete a query in a query pack",
+                    "parameters": [
+                        {
+                            "name": "--name",
+                            "value": "[path.id]"
+                        },
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--query-pack-name",
+                            "value": "[path.queryPackName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "az monitor log-analytics query-pack query show",
+            "description": "Show a specific query defined within a log analytics query pack.",
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/queryPacks/{queryPackName}/queries/{id}",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/query-pack/query#az-monitor-log-analytics-query-pack-query-show"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--name]",
+                        "[--query-id]",
+                        "[--query-pack-name]",
+                        "[--resource-group]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Show a query in a query pack",
+                    "parameters": [
+                        {
+                            "name": "--name",
+                            "value": "[path.id]"
+                        },
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--query-pack-name",
+                            "value": "[path.queryPackName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "resourceType": "deletedWorkspaces",
+    "apiVersion": "2021-12-01-preview",
+    "learnMore": {
+        "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace"
+    },
+    "commands": [
+        {
+            "name": "az monitor log-analytics workspace list-deleted-workspaces",
+            "description": "Get a list of deleted workspaces that can be recovered in a subscription or a resource group.",
+            "path": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/deletedWorkspaces",
+            "confirmation": false,
+            "help": {
+                "learnMore": {
+                    "url": "https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace#az-monitor-log-analytics-workspace-list-deleted-workspaces"
+                },
+                "parameterSets": {
+                    "parameters": [
+                        "[--resource-group]",
+                        "[--subscription]"
+                    ]
+                }
+            },
+            "examples": [
+                {
+                    "description": "Get a list of deleted workspaces that can be recovered in a resource group",
+                    "parameters": [
+                        {
+                            "name": "--resource-group",
+                            "value": "[path.resourceGroupName]"
+                        },
+                        {
+                            "name": "--subscription",
+                            "value": "[path.subscriptionId]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -310,9 +310,15 @@ def create_metric_alert_condition(condition_type, aggregation, metric_name, oper
 
     if dimension_list:
         dimensions = ' '.join([t for t in dimension_list if t.strip()])
+        # print("-------------------------diemensions 312: ", dimensions)
+        # -------------------------diemensions 312:  _where_ EntityName includes buyers-topic
         if dimensions.startswith(_metric_alert_dimension_prefix):
             dimensions = [t for t in dimensions.split(_metric_alert_dimension_prefix) if t]
+            # print("----------------------------diemensions 315: ", dimensions)
+            # ---------------------------- diemensions 315:  [' EntityName includes buyers-topic']
             dimensions = 'where' + 'and'.join(dimensions)
+            # print("----------------------------diemensions 317: ", dimensions)
+            # ----------------------------diemensions 317:  where EntityName includes buyers-topic
         condition += dimensions
 
     if skip_metric_validation:

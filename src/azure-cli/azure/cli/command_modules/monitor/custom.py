@@ -6,8 +6,45 @@
 # pylint: disable=protected-access
 
 from knack.log import get_logger
+import os
+from azure.cli.core.util import run_az_cmd, run_az_cmd_v2, run_az_cmd_v3
 
 logger = get_logger(__name__)
+
+
+def test_az1(cmd):
+    args = ["az", "group", "show", "-n", "liwaRg1"]
+    res0 = run_az_cmd(args, out_file=open(os.devnull, 'w'))
+    print(" test run_az_cmd res success: ---------")
+    print("\n".join(['      %s:%s' % item for item in res0.__dict__.items()]))
+
+    args = ["az", "group", "show", "-n", "liwaRg"]
+    res1 = run_az_cmd(args, out_file=open(os.devnull, 'w'))
+    print(" test run_az_cmd res fail: ---------")
+    print("\n".join(['      %s:%s' % item for item in res1.__dict__.items()]))
+
+
+def test_az2(cmd):
+    args = ["az", "group", "show", "-n", "liwaRg1"]
+    res0 = run_az_cmd_v2(args, out_file=open(os.devnull, 'w'))
+    print(" test run_az_cmd_v2 res success: ---------")
+    print("\n".join(['      %s:%s' % item for item in res0.__dict__.items()]))
+
+    args = ["az", "group", "show", "-n", "liwaRg"]
+    res1 = run_az_cmd_v2(args, out_file=open(os.devnull, 'w'))
+    print(" test run_az_cmd_v2 res fail: ---------")
+    print("\n".join(['      %s:%s' % item for item in res1.__dict__.items()]))
+
+def test_az3(cmd):
+    args = ["az", "group", "show", "-n", "liwaRg1"]
+    res0 = run_az_cmd_v3(args, capture_error=True)
+    print(" test run_az_cmd_v3 res success: ---------")
+    print("\n".join(['      %s:%s' % item for item in res0.__dict__.items()]))
+
+    args = ["az", "group", "show", "-n", "liwaRg"]
+    res1 = run_az_cmd_v3(args, capture_error=True)
+    print(" test run_az_cmd_v3 res fail: ---------")
+    print("\n".join(['      %s:%s' % item for item in res1.__dict__.items()]))
 
 
 # region ActivityLog

@@ -208,3 +208,8 @@ def load_command_table(self, _):
     self.command_table["monitor private-link-scope private-endpoint-connection show"] = ConnectionShow(loader=self)
     self.command_table["monitor private-link-scope private-endpoint-connection approve"] = ConnectionApprove(loader=self)
     self.command_table["monitor private-link-scope private-endpoint-connection reject"] = ConnectionReject(loader=self)
+
+    with self.command_group('monitor') as g:
+        g.command('test-az1', 'test_az1', command_type=monitor_custom)
+        g.command('test-az2', 'test_az2', command_type=monitor_custom)
+        g.command('test-az3', 'test_az3', command_type=monitor_custom)

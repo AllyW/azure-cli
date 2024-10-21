@@ -4,10 +4,84 @@
 # --------------------------------------------------------------------------------------------
 
 # pylint: disable=protected-access
+import json
 
 from knack.log import get_logger
+from azure.cli.core.util import run_az_cmd, run_az_cmd_v3, run_az_cmd_v2, run_az_cmd_v4, run_az_cmd_v5, run_az_cmd_v6
 
 logger = get_logger(__name__)
+
+
+def test_az1(cmd):
+    cmd = ["az", "monitor", "activity-log", "list", "--start-time", "2024-10-06", "--offset", "1m"]
+    res0 = run_az_cmd(cmd)
+    print(" test run_az_cmd_v1 res 0 ------------: ")
+    print('\n'.join(['   %s:%s' % item for item in res0.__dict__.items()]))
+
+    cmd = ["az", "group", "show", "-n", "liwaRg"]
+    res1 = run_az_cmd(cmd)
+    print(" test run_az_cmd_v1 res 1 ------------: ")
+    print('\n'.join(['   %s:%s' % item for item in res1.__dict__.items()]))
+
+
+def test_az2(cmd):
+    cmd = ["az", "group", "show", "-n", "liwaRg1"]
+    res0 = run_az_cmd_v2(cmd)
+    print(" test run_az_cmd_v2 res 0 ------------: ")
+    print('\n'.join(['   %s:%s' % item for item in res0.__dict__.items()]))
+
+    cmd = ["az", "group", "show", "-n", "liwaRg"]
+    res1 = run_az_cmd_v2(cmd)
+    print(" test run_az_cmd_v2 res 1 ------------: ")
+    print('\n'.join(['   %s:%s' % item for item in res1.__dict__.items()]))
+
+
+def test_az3(cmd):
+    cmd = ["az", "monitor", "activity-log", "list", "--start-time", "2024-10-06", "--offset", "1m"]
+    res0 = run_az_cmd_v3(cmd, capture_error=True)
+    print(" test run_az_cmd_v3 res 0 ------------: ")
+    print('\n'.join(['   %s:%s' % item for item in res0.__dict__.items()]))
+
+    cmd = ["az", "group", "show", "-n", "liwaRg"]
+    res1 = run_az_cmd_v3(cmd, capture_error=True)
+    print(" test run_az_cmd_v3 res 1 ------------: ")
+    print('\n'.join(['   %s:%s' % item for item in res1.__dict__.items()]))
+
+
+def test_az4(cmd):
+    cmd = ["az", "group", "show", "-n", "liwaRg1"]
+    res0 = run_az_cmd_v4(cmd)
+    print(" test run_az_cmd_v4 res 0 ------------: ")
+    print('\n'.join(['   %s:%s' % item for item in res0.__dict__.items()]))
+
+    # cmd = ["az", "group", "show", "-n", "liwaRg"]
+    # res1 = run_az_cmd_v4(cmd)
+    # print(" test run_az_cmd_v4 res 1 ------------: ")
+    # print('\n'.join(['   %s:%s' % item for item in res1.__dict__.items()]))
+
+
+def test_az5(cmd):
+    cmd = ["az", "group", "show", "-n", "liwaRg1"]
+    res0 = run_az_cmd_v5(cmd)
+    print(" test run_az_cmd_v5 res 0 ------------: ")
+    # print('\n'.join(['   %s:%s' % item for item in res0.__dict__.items()]))
+
+    cmd = ["az", "group", "show", "-n", "liwaRg"]
+    res1 = run_az_cmd_v5(cmd)
+    print(" test run_az_cmd_v5 res 1 ------------: ")
+    # print('\n'.join(['   %s:%s' % item for item in res1.__dict__.items()]))
+
+
+def test_az6(cmd):
+    cmd = ["az", "group", "show", "-n", "liwaRg1"]
+    res0 = run_az_cmd_v6(cmd, capture_error=True)
+    print(" test run_az_cmd_v6 res 0 ------------: ")
+    print('\n'.join(['   %s:%s' % item for item in res0.__dict__.items()]))
+
+    # cmd = ["az", "group", "show", "-n", "liwaRg"]
+    # res1 = run_az_cmd_v6(cmd, capture_error=True)
+    # print(" test run_az_cmd_v6 res 1 ------------: ")
+    # print('\n'.join(['   %s:%s' % item for item in res1.__dict__.items()]))
 
 
 # region ActivityLog

@@ -1395,7 +1395,8 @@ def run_az_cmd(args, out_file=None):
     cli.invoke(args, out_file=out_file)
     return cli.result
 
-def run_az_cmd_v1(args, capture_error=False):
+
+def run_az_cmd_v3(args, capture_error=False):
     """
     run_az_cmd would run az related cmds during command execution
     :param args: cmd to be executed, array of string, like `["az", "version"]`, "az" is optional
@@ -1434,3 +1435,213 @@ def run_az_cmd_v1(args, capture_error=False):
             cli.result.error = error_message
     return cli.result
 
+
+def run_az_cmd_v2(args, out_file=None):
+    """
+    run_az_cmd would run az related cmds during command execution
+    :param args: cmd to be executed, array of string, like `["az", "version"]`, "az" is optional
+    :param out_file: The file to send output to. file-like object
+    :return: cmd execution result object, containing `result`, `error`, `exit_code`
+    """
+    from azure.cli.core.azclierror import ArgumentUsageError
+    if not isinstance(args, list):
+        raise ArgumentUsageError("Invalid args. run_az_cmd args must be a list")
+    if args[0] == "az":
+        args = args[1:]
+
+    from azure.cli.core import get_default_cli
+    cli = get_default_cli()
+    try:
+        cli.invoke(args, out_file=out_file)
+    except (Exception, SystemExit) as ex:  # pylint: disable=broad-except
+        print("error in run_az_cmd_v2 exception: ", ex)
+        pass
+    finally:
+        return cli.result
+
+
+def worker(conn, args):
+    import time
+
+    class StreamToLogger:
+        def __init__(self, hint, conn):
+            self.conn = conn
+            self.hint = hint
+
+        def write(self, message):
+            if message:
+                self.conn.send((self.hint, message))
+
+        def flush(self):
+            pass
+
+    # 重定向 stdout 和 stderr
+    sys.stdout = StreamToLogger("stdout", conn)
+    sys.stderr = StreamToLogger("stderr", conn)
+
+    result = []
+    for i in range(5):
+        print(f"Message {i}")
+        result.append(i)
+        if i == 2:
+            print("Error occurred!", file=sys.stderr)
+        time.sleep(1)
+    print("1")
+    from azure.cli.core import get_default_cli
+    print("2")
+    cli = get_default_cli()
+    print("3")
+    try:
+        cli.invoke(args)
+    except (Exception, SystemExit) as ex:  # pylint: disable=broad-except
+        print(ex)
+    finally:
+        conn.send(("exit_code", cli.result.exit_code))
+        conn.send(("result", cli.result.result))
+        conn.send(("error", cli.result.error))
+    conn.send(("finished", "Done"))
+    conn.close()
+
+
+def run_az_cmd_v4(args):
+    """
+    run_az_cmd would run az related cmds during command execution
+    :param args: cmd to be executed, array of string, like `["az", "version"]`, "az" is optional
+    :return: cmd execution result object, containing `result`, `error`, `exit_code`
+    """
+    from azure.cli.core.azclierror import ArgumentUsageError
+    if not isinstance(args, list):
+        raise ArgumentUsageError("Invalid args. run_az_cmd args must be a list")
+    if args[0] == "az":
+        args = args[1:]
+
+    import multiprocessing
+
+    parent_conn, child_conn = multiprocessing.Pipe()
+
+    p = multiprocessing.Process(target=worker, args=(child_conn, args))
+    p.start()
+    try:
+        while True:
+            output_type, output = parent_conn.recv()
+            if output_type == "stdout":
+                print("Output from child process (stdout):", output)
+            elif output_type == "result":
+                print("Output from child process (result):", output)
+            elif output_type == "finished":
+                print("Output from child process (finished):", output)
+                break
+    except EOFError:
+        pass
+    p.join()
+    return output
+
+
+def worker2(queue, args):
+    import time
+
+    class StreamToLogger:
+        def __init__(self, hint, queue):
+            self.queue = queue
+            self.hint = hint
+
+        def write(self, message):
+            if message:
+                self.queue.put((self.hint, message))
+
+        def flush(self):
+            pass
+
+    # 重定向 stdout 和 stderr
+    sys.stdout = StreamToLogger("stdout", queue)
+    sys.stderr = StreamToLogger("stderr", queue)
+
+    result = []
+    for i in range(5):
+        print(f"Message {i}")
+        result.append(i)
+        if i == 2:
+            print("Error occurred!", file=sys.stderr)
+        time.sleep(1)
+
+    from azure.cli.core import get_default_cli
+    cli = get_default_cli()
+    try:
+        cli.invoke(args)
+    except (Exception, SystemExit) as ex:  # pylint: disable=broad-except
+        print(ex)
+    finally:
+        queue.put(("exit_code", cli.result.exit_code))
+        queue.put(("result", cli.result.result))
+        queue.put(("error", cli.result.error))
+    queue.put(("finished", "Done"))
+
+
+def run_az_cmd_v5(args):
+    """
+    run_az_cmd would run az related cmds during command execution
+    :param args: cmd to be executed, array of string, like `["az", "version"]`, "az" is optional
+    :return: cmd execution result object, containing `result`, `error`, `exit_code`
+    """
+    from azure.cli.core.azclierror import ArgumentUsageError
+    if not isinstance(args, list):
+        raise ArgumentUsageError("Invalid args. run_az_cmd args must be a list")
+    if args[0] == "az":
+        args = args[1:]
+
+    import multiprocessing
+
+    queue = multiprocessing.Queue()
+
+    p = multiprocessing.Process(target=worker2, args=(queue, args))
+    p.start()
+    try:
+        while True:
+            output_type, output = queue.get()
+            if output_type != "finished":
+                print("Output from child process :", output_type, " : ", output)
+            else:
+                print("Output from child process (finished):", output)
+                break
+    except EOFError:
+        pass
+    p.join()
+    return output
+
+
+def run_az_cmd_v6(args, capture_error=False):
+    """
+    run_az_cmd would run az related cmds during command execution
+    :param args: cmd to be executed, array of string, like `["az", "version"]`, "az" is optional
+    :param capture_error: Whether capture error message
+    :return: cmd execution result object, containing `result`, `error`, `exit_code`
+    """
+    from azure.cli.core.azclierror import ArgumentUsageError
+    if not isinstance(args, list):
+        raise ArgumentUsageError("Invalid args. run_az_cmd args must be a list")
+    if args[0] == "az":
+        args = args[1:]
+
+    from io import StringIO
+    stdout_buf = StringIO()
+    stderr_buf = StringIO()
+    sys.stdout = stdout_buf
+    sys.stderr = stderr_buf
+
+    from azure.cli.core import get_default_cli
+    cli = get_default_cli()
+
+    try:
+        cli.invoke(args, out_file=stdout_buf)
+    except (Exception, SystemExit) as ex:  # pylint: disable=broad-except
+        pass
+    finally:
+        sys.stdout = sys.__stdout__
+        sys.stderr = sys.__stderr__
+        output = stdout_buf.getvalue()
+        error_message = stderr_buf.getvalue()
+        stdout_buf.close()
+        stderr_buf.close()
+        if capture_error and cli.result.exit_code:
+            cli.result.error = error_message
+    return cli.result

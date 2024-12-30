@@ -10,7 +10,9 @@
 
 from azure.cli.core.aaz import *
 
-
+@register_command(
+    "monitor autoscale create",
+)
 class Create(AAZCommand):
     """Create an autoscale setting.
 
@@ -53,7 +55,7 @@ class Create(AAZCommand):
         _args_schema = cls._args_schema
         _args_schema.autoscale_name = AAZStrArg(
             options=["-n", "--name", "--autoscale-name"],
-            help="The autoscale setting name.",
+            help="The autoscale setting name.123443523465",
             required=True,
         )
         _args_schema.resource_group = AAZResourceGroupNameArg(

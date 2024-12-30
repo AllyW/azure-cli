@@ -9,4 +9,7 @@ monitor alert update:
         enabled:
             rule_exclusions:
             - missing_parameter_help
+monitor autoscale create:
+    rule_exclusions:
+    - missing_command_example
 ...

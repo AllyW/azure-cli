@@ -119,7 +119,7 @@ def load_command_table(self, _):
         self.command_table['monitor autoscale list'] = AutoScaleList(loader=self)
         self.command_table['monitor autoscale update'] = AutoScaleUpdate(loader=self)
         self.command_table['monitor autoscale test2'] = AutoScaleUpdate(loader=self)
-        g.custom_command('test3', 'list_activity_log')
+        g.custom_command('test3', 'autoscale_create')
 
     with self.command_group('monitor autoscale profile', autoscale_sdk, custom_command_type=autoscale_custom) as g:
         g.custom_command('create', 'autoscale_profile_create')

@@ -17,16 +17,18 @@ def get_resource_group_location(cli_ctx, name):
 
 
 def get_operator_map():
-    from azure.mgmt.monitor.models import ConditionOperator
-    return {'>': ConditionOperator.greater_than, '>=': ConditionOperator.greater_than_or_equal,
-            '<': ConditionOperator.less_than, '<=': ConditionOperator.less_than_or_equal}
+    return {'>': ">"}
+    # from azure.mgmt.monitor.models import ConditionOperator
+    # return {'>': ConditionOperator.greater_than, '>=': ConditionOperator.greater_than_or_equal,
+    #         '<': ConditionOperator.less_than, '<=': ConditionOperator.less_than_or_equal}
 
 
 def get_aggregation_map():
-    from azure.mgmt.monitor.models import TimeAggregationOperator
-    return {'avg': TimeAggregationOperator.average, 'min': TimeAggregationOperator.minimum,
-            'max': TimeAggregationOperator.maximum, 'total': TimeAggregationOperator.total,
-            'last': TimeAggregationOperator.last}
+    return {'avg': "avg"}
+    # from azure.mgmt.monitor.models import TimeAggregationOperator
+    # return {'avg': TimeAggregationOperator.average, 'min': TimeAggregationOperator.minimum,
+    #         'max': TimeAggregationOperator.maximum, 'total': TimeAggregationOperator.total,
+    #         'last': TimeAggregationOperator.last}
 
 
 # region Autoscale Maps

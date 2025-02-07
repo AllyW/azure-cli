@@ -25,7 +25,7 @@ from knack.arguments import CLIArgumentType
 
 # pylint: disable=line-too-long, too-many-statements
 def load_arguments(self, _):
-    from azure.mgmt.monitor.models import ConditionOperator, TimeAggregationOperator, EventData, PredictiveAutoscalePolicyScaleMode
+    from azure.mgmt.monitor.models import EventData, PredictiveAutoscalePolicyScaleMode
     from .grammar.metric_alert.MetricAlertConditionValidator import dim_op_conversion, agg_conversion, op_conversion, sens_conversion
     name_arg_type = CLIArgumentType(options_list=['--name', '-n'], metavar='NAME')
 
@@ -54,9 +54,9 @@ def load_arguments(self, _):
 
     with self.argument_context('monitor alert create', arg_group='Condition') as c:
         c.argument('metric_name')
-        c.argument('operator', arg_type=get_enum_type(ConditionOperator))
+        c.argument('operator')
         c.argument('threshold')
-        c.argument('time_aggregation', arg_type=get_enum_type(TimeAggregationOperator))
+        c.argument('time_aggregation')
         c.argument('window_size')
 
     with self.argument_context('monitor alert update') as c:

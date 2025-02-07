@@ -8,7 +8,7 @@ from azure.cli.core.commands import CliCommandType
 # pylint: disable=line-too-long, too-many-locals, too-many-statements
 def load_command_table(self, _):
     from ._client_factory import (
-        cf_alert_rules, cf_autoscale,
+        cf_alert_rules, cf_autoscale, cf_metric_ns,
         cf_action_groups, cf_event_categories,
         cf_metric_alerts, cf_log_analytics_workspace, cf_log_analytics_linked_storage)
     from .transformers import (action_group_list_table)
@@ -76,6 +76,13 @@ def load_command_table(self, _):
         operations_tmpl='azure.cli.command_modules.monitor.operations.general_operations#{}',
         client_factory=cf_metric_alerts,
         exception_handler=exception_handler)
+
+    metric_namespaces_sdk = CliCommandType(
+        operations_tmpl='azure.mgmt.monitor.operations#MetricNamespacesOperations.{}',
+        client_factory=cf_metric_ns,
+        operation_group='metric_namespaces',
+        exception_handler=exception_handler
+    )
 
     with self.command_group('monitor action-group', action_group_sdk, custom_command_type=action_group_custom) as g:
         g.wait_command('wait')
@@ -147,7 +154,8 @@ def load_command_table(self, _):
         from .transformers import metrics_table, metrics_definitions_table, metrics_namespaces_table
         g.command('list', 'list_metrics', command_type=monitor_custom, table_transformer=metrics_table)
         g.custom_command('list-definitions', 'list_definations', command_type=monitor_custom, table_transformer=metrics_definitions_table)
-        g.command('list-namespaces', 'list_namespaces', is_preview=True, command_type=monitor_custom, table_transformer=metrics_namespaces_table)
+        # g.command('list-namespaces', 'list_namespaces', is_preview=True, command_type=monitor_custom, table_transformer=metrics_namespaces_table)
+        g.command('list-namespaces', 'list', command_type=metric_namespaces_sdk, table_transformer=metrics_namespaces_table)
 
     with self.command_group("monitor metrics alert") as g:
         from .operations.metric_alert import MetricsAlertUpdate

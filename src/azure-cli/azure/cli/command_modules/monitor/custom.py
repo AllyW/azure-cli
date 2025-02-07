@@ -140,11 +140,30 @@ def list_metrics(cmd, resource,
 
 
 def list_definations(cmd, resource_uri, metricnamespace=None):
-    from .aaz.latest.monitor.metrics import ListDefinitions
-    return ListDefinitions(cli_ctx=cmd.cli_ctx)(command_args={
-        "resource_uri": resource_uri,
-        "metricnamespace": metricnamespace
-    })
+    from azure.cli.core.profiles import ResourceType
+    from azure.cli.core.commands.client_factory import get_mgmt_service_client
+    azure_monitor_client = get_mgmt_service_client(cmd.cli_ctx, ResourceType.MGMT_MONITOR)
+
+    diagnostic_settings = azure_monitor_client.diagnostic_settings
+
+    LogSettings = cmd.get_models(
+        'LogSettings',
+        resource_type=ResourceType.MGMT_MONITOR,
+        operation_group='diagnostic_settings')
+
+    RetentionPolicy = cmd.get_models(
+        'RetentionPolicy',
+        resource_type=ResourceType.MGMT_MONITOR,
+        operation_group='diagnostic_settings')
+    # from .aaz.latest.monitor.metrics import ListDefinitions
+    # return ListDefinitions(cli_ctx=cmd.cli_ctx)(command_args={
+    #     "resource_uri": resource_uri,
+    #     "metricnamespace": metricnamespace
+    # })
+    print("diagnostic_settings.__class__.__name__: ", diagnostic_settings.__class__.__name__)
+    print("LogSettings.__name__: ", LogSettings.__name__)
+    print("RetentionPolicy.__name__: ", RetentionPolicy.__name__)
+    print("done")
 
 
 def list_namespaces(cmd, resource_uri, start_time=None):

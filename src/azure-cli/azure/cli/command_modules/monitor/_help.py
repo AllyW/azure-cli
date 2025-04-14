@@ -42,7 +42,7 @@ parameters:
 
 helps['monitor activity-log list'] = """
 type: command
-short-summary: List and query activity log events.
+short-summary: List and query activity log events. <abc>
 parameters:
   - name: --correlation-id
     short-summary: Correlation ID to query.
